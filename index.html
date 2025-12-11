@@ -54,5 +54,51 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 </script>
 
+  <h2>Get Notified Every Hour</h2>
+
+<div id="notify-box">
+  <input id="emailInput" type="email" placeholder="Enter your email">
+  <button id="notifyBtn">Notify Me</button>
+</div>
+
+<p id="notifyMessage" style="margin-top: 15px; font-size: 1.2rem; color: #4caf50;"></p>
+
+<style>
+  #notify-box {
+    margin-top: 20px;
+  }
+  #emailInput {
+    padding: 10px;
+    width: 230px;
+    border-radius: 5px;
+    border: none;
+  }
+  #notifyBtn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+</style>
+
+<script>
+document.getElementById("notifyBtn").addEventListener("click", function() {
+  const email = document.getElementById("emailInput").value;
+
+  if (email.trim() === "") {
+    document.getElementById("notifyMessage").innerHTML = "Please enter a valid email!";
+    document.getElementById("notifyMessage").style.color = "#ff3333";
+  } else {
+    document.getElementById("notifyMessage").innerHTML =
+      "You will receive hourly notifications until January 28, 2026!";
+    document.getElementById("notifyMessage").style.color = "#4caf50";
+  }
+});
+</script>
+
 </body>
 </html>
